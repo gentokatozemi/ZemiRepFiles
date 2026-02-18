@@ -1,0 +1,37 @@
+## List of files that should be ignored from git
+
+# Ignore following folders
+GP/**/out/
+ST/**/out/
+ST/2025-ST-OSHIDA-Yuma/
+ST/2025-ST-TAGUCHI-Shunsuke/
+
+# Ignore private data files 
+alg_r6_data.sav
+2017UTASV20200326.csv
+Reed-Smith-JHRED-CANDIDATES.rds
+2024UTASP20241125.csv
+ST/2025-ST-KARUBE-Shogo/experiment_origin_data.sav
+
+# Ignore data files created in the code
+ST/2025-ST-KANNO-Takeru/kakegawa_data.rds
+
+# # Ignore Data Files Inside Data Folder
+# data/*.rds
+
+# # Ignore Analysis Output Files
+# outputs/*.rda
+
+# Ignore generated latex files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.bib.sav
+*.log
+# Ignore R related files
+*.Rhistory

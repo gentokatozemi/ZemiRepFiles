@@ -1,6 +1,6 @@
-## 「家族計画における子育て支援政策の認識とその影響」政経セミナー（2025）
+## 「家族計画における子育て支援政策の認識とその影響」政経セミナー（2026）
 ## 分析コード
-## 作成日：2025/09/26
+## 作成日：2026/02/19
 
 ##########
 ## 準備 ##
@@ -12,6 +12,9 @@ rm(list=ls())
 ## ワーキングディレクトリをこのファイルの場所に設定する
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 getwd() # 確認
+
+## 図表出力用のフォルダ（out）を作成
+if (!"./out" %in% list.dirs()) dir.create("./out")
 
 ## 必要な分析パッケージのインポート
 ## （エラーが出る場合は install.packages("PACKAGE-NAME")でインストール）
@@ -172,7 +175,7 @@ ggplot(plotdata, aes(x=x, y=y)) +
   theme(strip.background = element_blank(),
         strip.text = element_text(size = 11, face="bold"))
 ### 保存
-ggsave("bunpu_shussankekkoniko.png", width=4.8, height=3.307225)
+ggsave("./out/bunpu_shussankekkoniko.png", width=4.8, height=3.307225)
 
 ## *児童手当と養育費はランダムに割り当てられているので省略
 
@@ -197,7 +200,7 @@ ggplot(dn, aes(x=yoikuhi_ninshiki_std)) +
   # theme_bw()
 
 ### 保存
-ggsave("bunpu_yoikuhi_ninshiki_std.png", width=4.8, height=3.321136)
+ggsave("./out/bunpu_yoikuhi_ninshiki_std.png", width=4.8, height=3.321136)
 
 ##########
 ## 分析 ##
@@ -373,7 +376,7 @@ p <- ggplot(prout, aes(x=labelledx, y=pr)) +
         strip.text = element_text(size = 11, face="bold"))
 ## プロットを保存
 p
-ggsave("predictionplot_h1h2.png",width=4.8,height=3.307225)
+ggsave("./out/predictionplot_h1h2.png",width=4.8,height=3.307225)
 
 ## 予測値データ出力用関数（条件付あり）
 yosokuchi2 <- function(dpr,
@@ -470,7 +473,7 @@ p <- ggplot(na.omit(prout), aes(x=labelledx, y=pr)) +
         legend.position = "bottom")
 ## プロットを保存
 p
-ggsave("predictionplot_h3h4.png",width=4.8,height=4.216352)
+ggsave("./out/predictionplot_h3h4.png",width=4.8,height=4.216352)
 
 ## 限界効果プロット（M5とM6のみ）##
 
@@ -555,7 +558,7 @@ p <- ggplot(prout, aes(x=m, y=est)) +
         strip.text = element_text(size = 11, face="bold"),
         legend.position = "bottom")
 p
-ggsave("marginaleff_jidoteate56.png", width=4.8, height=3.307225)
+ggsave("./out/marginaleff_jidoteate56.png", width=4.8, height=3.307225)
 
 ## 養育費用情報 ##
 
@@ -607,4 +610,4 @@ p <- ggplot(prout, aes(x=m, y=est)) +
         strip.text = element_text(size = 11, face="bold"),
         legend.position = "bottom")
 p
-ggsave("marginaleff_yoikuhi56.png", width=4.8, height=3.307225)
+ggsave("./out/marginaleff_yoikuhi56.png", width=4.8, height=3.307225)
