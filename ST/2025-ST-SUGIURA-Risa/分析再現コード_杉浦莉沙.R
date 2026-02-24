@@ -3,6 +3,7 @@
 ## 更新履歴：
 ## 2026/01/22 杉浦莉沙（提出版）
 ## 2026/02/13 加藤言人（最終調整）
+## 2026/02/24 加藤言人（再修正）
 
 ##データをクリーンにする
 rm(list=ls())
@@ -606,24 +607,26 @@ dtpL$keizai <- 0
 dtpL$keizai[which(dtpL$topic%in%c("tax10","pension","Competitiveness","bank",
                                   "Smallgovernment","Publicworks","Fiscalstimulus",
                                   "Corporatetax","farm","nichigin","Employment",
-                                  "Civilservant","economy","domestic","Deficit"))] <- 1
+                                  # "Civilservant",
+                                  "economy","domestic","Deficit", "Decliningbirthrate"
+                                  ))] <- 1
 
 ## 安全保障・外交政策ダミー
 ##外交・安全保障政策に該当する質問項目を「外交・安全保障政策ダミー」としてまとめる。
 dtpL$anzen <- 0
 dtpL$anzen[which(dtpL$topic%in%c("Defense","northsouth","hikaku","america",
-                                 "china","Fiscalstimulus"))] <- 2
+                                 "china"#,"Fiscalstimulus"
+                                 ))] <- 1 #2
 
 ##新法案・制度政策ダミー
 ##新法案・制度政策に該当する質問項目を「新法案・制度政策ダミー」としてまとめる。
 
 dtpL$new <- 0
 dtpL$new[which(dtpL$topic%in%c("Privacy","Foreigner","Civilservant","faction",
-                               "vote","select","samesexmarriage","Nucleus",
-                               "Environment","AI","number","donation",
-                               "party","Representative","election"))] <- 3
-
-## 他のダミーも同様に作る
+                               "vote","select","samesexmarriage","Quarter",
+                               "Nucleus",
+                               "Environment","AI","number","Donation",
+                               "party","Representative","election"))] <- 1 #3
 
 ##########
 ## 分析 ##
@@ -634,9 +637,9 @@ dtpL$new[which(dtpL$topic%in%c("Privacy","Foreigner","Civilservant","faction",
 
 ## 仮説１：現職→意見表明低
 ## 仮説２：自民党→意見表明低
-## 仮説３：経済政策→仮説１・２が強まる
-## 仮説４：外交政策→仮説１・２が弱まる
-## 仮説５：外交政策→仮説１・２が強まる
+## 仮説３，４：経済政策→仮説１・２が強まる
+## 仮説５，６：外交政策→仮説１・２が弱まる
+## 仮説７，８：新法政策→仮説１・２が強まる
 
 #install.packages("fixest") #インストールされていなければ1回だけ実行
 library(fixest) 
