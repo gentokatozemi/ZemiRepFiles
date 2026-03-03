@@ -16,4 +16,4 @@
 * <code>[analysis_g3_main_v3_kanshinalt.R](analysis_g3_main_v3_kanshinalt.R)</code>: 値０と１を統合した政治関心変数を用いた分析（オンライン付録E.2）を再現するファイル。表E.1, 図E.3, E.4を出力する。
 * <code>[analysis_g3_main_v3_kiokualt.R](analysis_g3_main_v3_kiokualt.R)</code>: 事前登録された公約記憶変数を用いた分析（オンライン付録F）を再現するファイル。表F.1, 図F.1, F.2, F.3を出力する。
 * <code>[analysis_g3_main_v3_chishikialt.R](analysis_g3_main_v3_chishikialt.R)</code>: 正答０－１問を統合した政治知識変数を用いた分析（オンライン付録G）を再現するファイル。表G.1, 図G.1, G.2を出力する。 
-* <code>[analysis_g3_main_v3_controlled.R](analysis_g3_main_v3_controlled.R)</code>: 統制変数を含めた分析を再現するファイル。表H.1, H.2, 図H.1, H.2, H.3, H.4, H.5, H.6, H.7, H.8を出力する。
+* <code>[analysis_g3_main_v3_controlled.R](analysis_g3_main_v3_controlled.R)</code>: 統制変数を含めた分析（オンライン付録H）を再現するファイル。表H.1, H.2, 図H.1, H.2, H.3, H.4, H.5, H.6, H.7, H.8を出力する。
