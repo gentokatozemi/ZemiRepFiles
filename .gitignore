@@ -35,3 +35,6 @@ ST/2025-ST-KANNO-Takeru/kakegawa_data.rds
 *.log
 # Ignore R related files
 *.Rhistory
+
+## Ignore Google Drive files generated only in Windows
+*.ini
